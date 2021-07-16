@@ -36,14 +36,6 @@ public class LoginPage1  extends BaseClass{
 		clickOnSubmit.click();
 	}
 	
-	public String validateTitle() {
-		String actualTitle=driver.getTitle();
-		return actualTitle;
-	}
-
-	public String validateurl() {
-		String actualurl=driver.getCurrentUrl();
-		return actualurl;
-	}
+	
 
 }

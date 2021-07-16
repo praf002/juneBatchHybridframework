@@ -17,6 +17,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class LoginPageTest extends BaseClass {
 	
+			
 	LoginPage1 loginpage1;
 	
 	@BeforeClass
@@ -30,19 +31,7 @@ public class LoginPageTest extends BaseClass {
 		loginpage1.typepassword(prop.getProperty("password"));
 		loginpage1.clickOnLoginButton();
 	}
-	@Test
-	public void validateTitle() {
-		String actualtitle=loginpage1.validateTitle();
-		Assert.assertEquals(actualtitle, "Cogmento CRM");
-	}
 	
-	
-	@Test
-	public void validateUrl() {
-		String actualUrl=loginpage1.validateurl();
-		String expectdUrl="https://ui.cogmento.com/";
-		Assert.assertEquals(actualUrl, expectdUrl);
-	}
 	
 	
 	@AfterClass
@@ -50,16 +39,4 @@ public class LoginPageTest extends BaseClass {
 		driver.close();
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
 }

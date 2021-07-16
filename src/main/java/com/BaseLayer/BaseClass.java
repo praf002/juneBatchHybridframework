@@ -18,11 +18,12 @@ public class BaseClass {
 	public static WebDriver driver;
 	public static Properties prop;
 	public static FileInputStream fis;
+	
 	public BaseClass() {
 		prop=new Properties();
 		
 		try {
-			fis=new FileInputStream("C:\\Users\\L470_1\\Desktop\\12June2021\\TestScript\\FreeCRMForApplication\\src\\main\\java\\com\\ConfigLayer\\config.properties");
+			fis=new FileInputStream(System.getProperty("user.dir")+"/src/main/java/com/ConfigLayer/config.properties");
 			prop.load(fis);
 		} catch (FileNotFoundException e) {
 			
@@ -52,6 +53,7 @@ public class BaseClass {
 			driver=new InternetExplorerDriver();
 		}
 	
+		driver.manage().window().maximize();
 		driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
 		driver.manage().deleteAllCookies();
